@@ -1,11 +1,53 @@
-/* create employee page */
 label {
   display: block;
   margin-top: 1rem;
   margin-bottom: 10px;
 }
 
-/* create employee page */
 .address {
   margin-top: 10px;
+}
+
+/* Modal  */
+
+.modal {
+  width: 500px;
+  position: relative;
+  height: 3%;
+  padding: 15px 30px;
+  overflow: visible;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
+  border: none;
+}
+
+.modalContent {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+body:has(dialog:modal) {
+  overflow: hidden;
+}
+
+.modalMessage {
+  margin: 0;
+}
+
+.modalCloseBtn {
+  position: absolute;
+  bottom: 2.3rem;
+  left: 34rem;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 16px;
 }

@@ -103,7 +103,7 @@ const CreateEmployee = () => {
             <input name="zipCode" type="number" />
           </fieldset>
 
-          <label htmlFor="department" className="styles.label">
+          <label htmlFor="department" className={styles.label}>
             Department
           </label>
           <select name="department" id="department">
@@ -116,10 +116,10 @@ const CreateEmployee = () => {
           <button type="submit">Save</button>
         </form>
 
-        <dialog ref={modalRef}>
-          <p>Employee Created!</p>
+        <dialog className={styles.modal} ref={modalRef}>
+          <div className={styles.modalContent}>Employee Created</div>
           <form method="dialog">
-            <button>X</button>
+            <button className={styles.modalCloseBtn}>X</button>
           </form>
         </dialog>
       </div>
