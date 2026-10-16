@@ -3,14 +3,12 @@ import "../../styles/global.css";
 import styles from "./createEmployee.module.css";
 import { useRef } from "react";
 import states from "./utils/states.js";
+import { getEmployees } from "./utils/sharedMethod.js";
 
 // test optimisation perfo formData vs autre methode
 const CreateEmployee = () => {
   // const [employeesList, setEmployeesList] = useState([]);
 
-  const getEmployees = () => {
-    return JSON.parse(localStorage.getItem("employees")) || [];
-  };
   const modalRef = useRef(null);
 
   const handleSubmit = (e) => {
