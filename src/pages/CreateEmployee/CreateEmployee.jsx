@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import "../../styles/global.css";
 import styles from "./createEmployee.module.css";
-import { useState } from "react";
+import { useRef } from "react";
 import states from "./utils/states.js";
 
 // test optimisation perfo formData vs autre methode
@@ -11,6 +11,7 @@ const CreateEmployee = () => {
   const getEmployees = () => {
     return JSON.parse(localStorage.getItem("employees")) || [];
   };
+  const modalRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +49,7 @@ const CreateEmployee = () => {
     // console.log("emp list", employeesList);
     localStorage.setItem("employees", JSON.stringify(updatedEmployees));
     //  sauf si erreur
+    modalRef.current.showModal();
     form.reset();
   };
 
@@ -115,6 +117,13 @@ const CreateEmployee = () => {
           </select>
           <button type="submit">Save</button>
         </form>
+
+        <dialog ref={modalRef}>
+          <p>Employee Created!</p>
+          <form method="dialog">
+            <button>X</button>
+          </form>
+        </dialog>
       </div>
     </>
   );
